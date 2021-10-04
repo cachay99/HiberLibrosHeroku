@@ -214,7 +214,7 @@ public class InicioController {
     @PostMapping("/guardarRelato")
     public String formularioRelato(Model m, Integer id, Relato relato, MultipartFile ficherosubido) {
         serviceRelato.guardarRelato(RUTA_BASE, relato, ficherosubido, id);
-        return "redirect:/hiberlibros/panelUsuario";
+        return "redirect:panelUsuario";
     }
 
     @GetMapping("/relato")
@@ -232,7 +232,7 @@ public class InicioController {
         } else {
             m.addAttribute("borrado", "Error, no es posible borrar este autor");
         }
-        return "redirect:/hiberlibros/panelUsuario";
+        return "redirect:panelUsuario";
     }
 
     @GetMapping("/gestionarPeticion")
@@ -251,19 +251,19 @@ public class InicioController {
         serviceInter.guardarIntercambio(ulPrestatario, ulPrestador);
         petiService.aceptarPeticion(p);
 
-        return "redirect:/hiberlibros/panelUsuario";
+        return "redirect:panelUsuario";
     }
 
     @GetMapping("/rechazarIntercambio")
     public String rechazarIntercambio(Integer id) {
         petiService.rechazarPeticion(id);
-        return "redirect:/hiberlibros/panelUsuario";
+        return "redirect:panelUsuario";
     }
 
     @GetMapping("/finIntercambio")
     public String finIntercambio(Integer id) {
         serviceInter.finIntercambio(id);
-        return "redirect:/hiberlibros/panelUsuario";
+        return "redirect:panelUsuario";
     }
 
     @GetMapping("/editarUsuario")
