@@ -48,7 +48,7 @@ public class GeneroController {
             borrado = "Error, no es posible borrar este género";
         }
 
-        return "redirect:/generos/listarAdmin?borrado=" + borrado;
+        return "redirect:generos/listarAdmin?borrado=" + borrado;
     }
 
     @GetMapping("/editar")
