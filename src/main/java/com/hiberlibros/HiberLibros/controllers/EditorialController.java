@@ -49,7 +49,7 @@ public class EditorialController {
         return "redirect:/editoriales/editoriales";
     }
 
-    @PostMapping("/baja")
+    @PostMapping("/eliminarEditorial")
     public String editorialesBaja(Integer id) {
         String borrado="";
         if (serviceEditorial.bajaEditorial(id)) {
