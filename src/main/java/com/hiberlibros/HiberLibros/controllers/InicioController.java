@@ -117,7 +117,7 @@ public class InicioController {
     @GetMapping("/logout")
     public String logout() {
         SecurityContextHolder.clearContext();
-        return "/principal/logout";
+        return "principal/logout";
     }
 
     @GetMapping("/panelUsuario") //entrada al panel principal de usuario, se pasan todos los elementos que se han de mostrar
@@ -176,7 +176,7 @@ public class InicioController {
         }
 
         ulService.guardar(ul, l, u);
-        return "redirect:/hiberlibros/panelUsuario";
+        return "redirect:panelUsuario";
     }
 
     @PostMapping("/saveAutor")//Guarda un autor y vuelve a la página de registrar libro
