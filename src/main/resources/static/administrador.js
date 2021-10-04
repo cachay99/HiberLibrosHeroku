@@ -160,7 +160,7 @@ function borrarEditorial(pID) {
         message: "¿Estás seguro?",
         callback: function (result) {
             if (result) {
-                window.location.href = "editoriales/baja?id=" + pID;
+                window.location.href = "/editoriales/baja?id=" + pID;
             }
         }
     });
