@@ -58,7 +58,7 @@ public class EditorialController {
             borrado="Error, no es posible borrar esta editorial";
         }
         
-        return "redirect:editoriales/listarAdmin?borrado="+borrado;
+        return "redirect:/listarAdmin?borrado="+borrado;
     }
 
     @PostMapping("/editoriales/modificacion")
