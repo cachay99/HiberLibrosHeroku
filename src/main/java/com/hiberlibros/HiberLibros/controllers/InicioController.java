@@ -194,7 +194,7 @@ public class InicioController {
         liService.guardarLibro(l);
         Usuario u = usuService.usuarioRegistrado(serviceSeguridad.getMailFromContext());
         ulService.guardar(ul, l, u);
-        return "redirect:/hiberlibros/panelUsuario";//vuelve a la página inicial
+        return "redirect:panelUsuario";//vuelve a la página inicial
     }
 
     @GetMapping("/buscarLibro")//Muestra la lita de libros, todos o los buscados si está relleno el campo buscador
