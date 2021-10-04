@@ -239,7 +239,7 @@ public class InicioController {
     public String gestionarPeticion(Model m, Integer id) {
         Peticion p = petiService.consultarPeticionId(id);
         m.addAttribute("peticiones", p);
-        m.addAttribute("librosSolicitante", ulService.buscarDisponibles(p.getIdUsuarioSolicitante()));
+        m.addAttribute("librosSolicitante", ulService.buscarUsuariotiene(p.getIdUsuarioSolicitante()));
         return "principal/formPeticion";
     }
 

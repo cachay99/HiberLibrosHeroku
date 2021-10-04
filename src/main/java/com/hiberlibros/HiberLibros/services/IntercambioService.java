@@ -33,7 +33,7 @@ public class IntercambioService implements IIntercambioService {
         i.setFechaPrestamo(date);
         i.setUsuarioPrestador(ulPrestador);
         i.setUsuarioPrestatario(ulPrestatario);
-        ulPrestatario.setEstadoPrestamo("ocupado");
+        ulPrestatario.setEstadoPrestamo("ocupado");        
         serviceUL.editar(ulPrestatario);
         ulPrestador.setEstadoPrestamo("ocupado");
         serviceUL.editar(ulPrestador);
