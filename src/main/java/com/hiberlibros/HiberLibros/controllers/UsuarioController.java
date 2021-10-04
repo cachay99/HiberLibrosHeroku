@@ -63,7 +63,7 @@ public class UsuarioController {
 
     @PostMapping("/editarUsuario")//edita usuario, manda el usuario para rellenar el formulario
     public String usuarioEditar(Usuario u) {
-        return "redirect:hiberlibros/panelUsuario";
+        return "redirect:/hiberlibros/panelUsuario";
     }
 
     @GetMapping("/borrar")
