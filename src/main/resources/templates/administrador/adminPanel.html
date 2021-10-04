@@ -11,7 +11,7 @@
 		<div id="inicio" class="row">
 			<div id="container"
 				class="col card inline-block card text-white bg-light mb-3">
-				<a href="/hiberlibros/paneladmin/addEvent">Añadir Evento</a>
+				<a onclick="addEvent()">Añadir Evento</a>
                             <input id="valor" ddl-url="/hiberlibros/paneladmin/buscarEvento" ddl-text="Buscar evento" class="form-control"/> 
                             <button type="submit" onclick="myFunction()" >Borrar Evento</button> 
                         </div>
@@ -30,5 +30,17 @@
           </div>
 
      </div>
+    <div style="display:none" id="addEvento">
+            <form action="/hiberlibros/paneladmin/evento" method="post">
+<!--                <input name="id" type="hidden" />-->
+                <label for="startDate">Fecha de inicio:</label>
+                <input class="form-control" name="startDate" type="date"/>
+                <label for="endDate">Fecha de Fin:</label>
+                <input class="form-control" name="endDate" type="date"/>
+                <label for="summary">Descripcion:</label>
+                <input class="form-control" name="summary" type="text"/>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
 </body>
 </html>

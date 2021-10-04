@@ -168,6 +168,14 @@ function altaEditorial() {
     });
 }
 
+function addEvent() {
+    bootbox.dialog({
+        title: 'Modificar editorial',
+        size: 'large',
+        message: "<div id='editar'>" + $("#addEvento").html() + "</div>"
+    });
+}
+
 function editarEditorial(pID) {
     $.ajax({
         url: '/editoriales/editar',
