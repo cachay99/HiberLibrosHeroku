@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author Usuario
  */
 @Controller
-@RequestMapping
+@RequestMapping("/editoriales")
 public class EditorialController {
 
     @Autowired
     private IEditorialService serviceEditorial;
 
-    @RequestMapping(value = "/editoriales", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping( method = {RequestMethod.POST, RequestMethod.GET})
     public String editoriales(Model m, Editorial editorial) {
         if (editorial.getId() == null) {
             editorial = new Editorial();
@@ -35,7 +35,7 @@ public class EditorialController {
         return "/editoriales/editoriales";
     }
 
-    @PostMapping("alta")
+    @PostMapping("/alta")
     public String editorialesAlta(Model m, Editorial ed) {
         List<Editorial> editoriales = serviceEditorial.consultaPorNombreEditorial(ed);
         String errMensaje = null;
@@ -49,8 +49,8 @@ public class EditorialController {
         return "redirect:/editoriales/editoriales";
     }
 
-    @PostMapping("/editoriales/baja")
-    public String editorialesBaja(Model m, Integer id) {
+    @PostMapping("/baja")
+    public String editorialesBaja(Integer id) {
         String borrado="";
         if (serviceEditorial.bajaEditorial(id)) {
             borrado="Editorial borrada";
@@ -61,7 +61,7 @@ public class EditorialController {
         return "redirect:/listarAdmin?borrado="+borrado;
     }
 
-    @PostMapping("/editoriales/modificacion")
+    @PostMapping("/modificacion")
     public String editorialesModificacion(Model m, Editorial ed) {
         serviceEditorial.altaModificacionEditorial(ed);
         return "redirect:/editoriales/listarAdmin";
@@ -73,7 +73,7 @@ public class EditorialController {
 
         return "forward:/editoriales/editoriales";
     }
-    @GetMapping("/editoriales/listarAdmin")
+    @GetMapping("/listarAdmin")
     public String listaAdmin(Model m, String borrado) {
         m.addAttribute("editoriales", serviceEditorial.consultaTodas());
         if(borrado==null){
@@ -81,7 +81,7 @@ public class EditorialController {
         }
         return "administrador/editoriales";
     }
-    @GetMapping("/editoriales/editar")
+    @GetMapping("/editar")
     @ResponseBody
     public Editorial editarEdit(Integer id) {
         Editorial edit = serviceEditorial.consultaPorIdEditorial(id);

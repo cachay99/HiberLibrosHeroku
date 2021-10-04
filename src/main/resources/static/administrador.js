@@ -148,7 +148,7 @@ function borrarGenero(pID) {
         message: "¿Estás seguro?",
         callback: function (result) {
             if (result) {
-                window.location.href = "borrar/" + pID;
+                window.location.href = "/borrar?id" + pID;
             }
         }
     });
@@ -160,7 +160,7 @@ function borrarEditorial(pID) {
         message: "¿Estás seguro?",
         callback: function (result) {
             if (result) {
-                window.location.href = "baja?id=" + pID;
+                window.location.href = "/baja?id=" + pID;
             }
         }
     });

@@ -39,8 +39,8 @@ public class GeneroController {
         return "redirect:listarAdmin";
     }
 
-    @GetMapping("/borrar/{id}")
-    public String borrarGenero(Model m, @PathVariable Integer id) {
+    @GetMapping("/borrar")
+    public String borrarGenero(Model m,Integer id) {
         String borrado = "";
         if (serviceGen.borrarGenero(id)) {
             borrado = "Género borrado";
