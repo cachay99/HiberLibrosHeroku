@@ -6,8 +6,9 @@
         <title>Editoriales</title>
     </head>
     <body>
+        <p th:if="${borrado!=null}" id="mensajeBorrado" style="display:none"><span  th:text=${borrado}></span></p>
         <div class="fondo col-sm p-3 min-vh-100">
-            <p th:if="${borrado!=null}" id="mensajeBorrado" style="display:none"><span  th:text=${borrado}></span></p>
+            
             <div class="container">
                 <a onclick="altaEditorial()" class="btn btn-dark"><i class="far fa-trash-alt" ><span style="margin-left:5px">Insertar Editorial</span></i></a>
                 <table class="table table-light mt-5 col-5">

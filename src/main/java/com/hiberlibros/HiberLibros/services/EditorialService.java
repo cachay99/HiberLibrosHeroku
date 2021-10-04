@@ -44,7 +44,7 @@ public class EditorialService implements IEditorialService {
     public Boolean bajaEditorial(Integer id) {
         Editorial e = encontrarPorId(id);
         List<Libro> l = repoLibro.encontrarPorEditorial(e);
-        if (l.isEmpty() || l == null) {
+        if (l.isEmpty()) {
             repoEditorial.deleteById(id);
             return true;
         } else {

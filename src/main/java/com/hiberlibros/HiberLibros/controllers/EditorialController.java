@@ -49,7 +49,7 @@ public class EditorialController {
         return "redirect:/editoriales/editoriales";
     }
 
-    @PostMapping("/eliminarEditorial")
+    @GetMapping("/eliminarEditorial")
     public String editorialesBaja(Integer id) {
         String borrado="";
         if (serviceEditorial.bajaEditorial(id)) {
@@ -58,7 +58,7 @@ public class EditorialController {
             borrado="Error, no es posible borrar esta editorial";
         }
         
-        return "redirect:/listarAdmin?borrado="+borrado;
+        return "redirect:/editoriales/listarAdmin?borrado="+borrado;
     }
 
     @PostMapping("/modificacion")
@@ -76,7 +76,7 @@ public class EditorialController {
     @GetMapping("/listarAdmin")
     public String listaAdmin(Model m, String borrado) {
         m.addAttribute("editoriales", serviceEditorial.consultaTodas());
-        if(borrado==null){
+        if(borrado!=null){
             m.addAttribute("borrado", borrado);
         }
         return "administrador/editoriales";

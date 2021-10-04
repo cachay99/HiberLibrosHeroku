@@ -145,8 +145,8 @@ public class GenerarDatos implements IGeneracionDatos {
         }
         if(repoUsuLibro.findAll().isEmpty()){
             repoUsuLibro.save(new UsuarioLibro(1, "Bien", "Libre", "Tengo", Boolean.FALSE, repoUsuario.findById(1).get(), repoLibro.findById(1).get()) );
-            repoUsuLibro.save(new UsuarioLibro(2, "Mal", "Libre", "Tengo", Boolean.FALSE, repoUsuario.findById(1).get(), repoLibro.findById(3).get()) );
-            repoUsuLibro.save(new UsuarioLibro(3, "Bien", "Libre", "Tengo", Boolean.FALSE, repoUsuario.findById(2).get(), repoLibro.findById(5).get()) );
+            repoUsuLibro.save(new UsuarioLibro(2, "Mal", "ocupado", "Tengo", Boolean.FALSE, repoUsuario.findById(1).get(), repoLibro.findById(3).get()) );
+            repoUsuLibro.save(new UsuarioLibro(3, "Bien", "ocupado", "Tengo", Boolean.FALSE, repoUsuario.findById(2).get(), repoLibro.findById(5).get()) );
             repoUsuLibro.save(new UsuarioLibro(4, "Excelente", "Libre", "Tengo", Boolean.FALSE, repoUsuario.findById(2).get(), repoLibro.findById(2).get()) );        
         }
         
