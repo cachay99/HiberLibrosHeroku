@@ -76,6 +76,9 @@ public class EditorialController {
     @GetMapping("/editoriales/listarAdmin")
     public String listaAdmin(Model m, String borrado) {
         m.addAttribute("editoriales", serviceEditorial.consultaTodas());
+        if(borrado==null){
+            m.addAttribute("borrado", borrado);
+        }
         return "administrador/editoriales";
     }
     @GetMapping("/editoriales/editar")
