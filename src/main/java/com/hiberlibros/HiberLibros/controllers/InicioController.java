@@ -86,7 +86,7 @@ public class InicioController {
             m.addAttribute("error", error);
         }
 
-        return "/principal/login";
+        return "principal/login";
     }
 
     @GetMapping("/pruebaContexto")
