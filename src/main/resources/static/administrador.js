@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 function modificarLibros(pId) {
     $.ajax({
-        url: '/libros/modificar',
+        url: '/modificar',
         data: {
             id: pId
         },
@@ -141,7 +141,30 @@ function eliminarAutor(pID) {
         }
     });
 }
+function borrarGenero(pID) {
 
+    bootbox.confirm({
+        size: "small",
+        message: "¿Estás seguro?",
+        callback: function (result) {
+            if (result) {
+                window.location.href = "/borrar/" + pID;
+            }
+        }
+    });
+}
+function borrarEditorial(pID) {
+
+    bootbox.confirm({
+        size: "small",
+        message: "¿Estás seguro?",
+        callback: function (result) {
+            if (result) {
+                window.location.href = "/baja?id=" + pID;
+            }
+        }
+    });
+}
 function editarGenero(pID) {
     $.ajax({
         url: '/genero/editar',

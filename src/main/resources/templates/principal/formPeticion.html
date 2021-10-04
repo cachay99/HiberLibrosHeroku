@@ -18,7 +18,6 @@
                 <div class="col-6">
                     <label for="usuarioPrestatario">Libros disponibles: </label>
                     <select multiple class='form-control' name="usuarioPrestatario">
-                        <option></option>
                         <option th:each="ls:${librosSolicitante}" th:value="${ls.id}"th:text="${ls.libro.titulo+' Estado: '+ls.estadoConservacion}"></option>
                     </select>
                     <input type="hidden" name="id_peticion" th:value="${peticiones.id}"/>

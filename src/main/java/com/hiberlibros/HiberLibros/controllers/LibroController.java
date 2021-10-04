@@ -67,7 +67,7 @@ public class LibroController {
         m.addAttribute("editoriales", serviceEdit.consultaTodas());
         m.addAttribute("autores", serviceAutor.consultarAutores());
 
-        return "modificar";
+        return "libros/modificar";
     }
 
     @GetMapping("/listarAdmin")
