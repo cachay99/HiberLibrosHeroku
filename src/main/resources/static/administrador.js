@@ -4,7 +4,7 @@ $(document).ready(function () {
 });
 function modificarLibros(pId) {
     $.ajax({
-        url: 'libros/modificar',
+        url: '/libros/modificar',
         data: {
             id: pId
         },
