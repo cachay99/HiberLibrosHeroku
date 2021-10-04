@@ -39,7 +39,7 @@ public class PreferenciaController {
         model.addAttribute("generos", serviceGenero.getGeneros());;
         model.addAttribute("formulario", new Preferencia());
 
-        return "/preferencias/preferencia";
+        return "preferencias/preferencia";
     }
 
     @PostMapping("/guardar")

@@ -97,7 +97,7 @@ public class RelatoController {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return "redirect:/hiberlibros/panelUsuario";
+        return "redirect:hiberlibros/panelUsuario";
     }
 
     @PostMapping("/addValoracion")
@@ -154,7 +154,7 @@ public class RelatoController {
     @GetMapping("/listarAdmin")
     private String listarTodo(Model m) {
         m.addAttribute("relatos", repoRelato.findAll());
-        return "/administrador/relatos";
+        return "administrador/relatos";
     }
 
     @GetMapping("/buscarRelato")
@@ -166,7 +166,7 @@ public class RelatoController {
             m.addAttribute("relatos", repoRelato.findByTituloContainingIgnoreCase(busqueda));
         }
 
-        return "/principal/buscarRelatos";
+        return "principal/buscarRelatos";
     }
 
     @GetMapping("/buscarPorValoracionMayor")
@@ -175,7 +175,7 @@ public class RelatoController {
         model.addAttribute("generos", serviceGenero.getGeneros());
         model.addAttribute("relatos", relatoService.buscarPorValoracionMenorAMayor());
         model.addAttribute("usuario", usuService.usuarioId(id));
-        return "/principal/buscarRelatos";
+        return "principal/buscarRelatos";
     }
 
     @GetMapping("/buscarPorValoracionMenor")
@@ -184,7 +184,7 @@ public class RelatoController {
         model.addAttribute("generos", serviceGenero.getGeneros());
         model.addAttribute("relatos", relatoService.buscarPorValoracionMayorAMenor());
         model.addAttribute("usuario", usuService.usuarioId(id));
-        return "/principal/buscarRelatos";
+        return "principal/buscarRelatos";
     }
 
     @GetMapping("/eliminarAdmin")

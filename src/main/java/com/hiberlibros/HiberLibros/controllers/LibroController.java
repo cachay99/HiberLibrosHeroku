@@ -80,7 +80,7 @@ public class LibroController {
             m.addAttribute("borrado",borrado);
         }
 
-        return "libros";
+        return "administrador/libros";
     }
 
     @PostMapping("/guardarAdmin")

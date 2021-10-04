@@ -160,6 +160,13 @@ function editarGenero(pID) {
 
 
 }
+function altaEditorial() {
+    bootbox.dialog({
+        title: 'Modificar editorial',
+        size: 'large',
+        message: "<div id='editar'>" + $("#editarEditorial").html() + "</div>"
+    });
+}
 
 function editarEditorial(pID) {
     $.ajax({
