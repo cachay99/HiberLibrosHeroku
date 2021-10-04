@@ -50,6 +50,7 @@ public class LibroController {
 
     @GetMapping("/eliminar")
     public String eliminarLibro(Model m, Integer id) {
+       
         if (libroService.bajaLibroId(id)) {
             m.addAttribute("borrado", "Libro borrado");
         } else {
@@ -99,7 +100,7 @@ public class LibroController {
         if (libroService.bajaLibroId(id)) {
             borrado="Borrado con éxito";
         } else {
-           borrado= "Error, no es posible borrar este autor";
+           borrado= "Error, no es posible borrar este libro";
         }
         return "redirect:listarAdmin?borrado="+borrado;
     }
