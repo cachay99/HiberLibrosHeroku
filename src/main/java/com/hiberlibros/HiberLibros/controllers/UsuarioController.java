@@ -43,7 +43,7 @@ public class UsuarioController {
     public String usuarioFormulario(Model m, String registro) { //devuelve una lista con todos los usuarios, parte administrador
         m.addAttribute("registro", registro);
         m.addAttribute("usuarios", serviceUsuario.usuariosList());
-        return "/usuarios/usuariosFormulario";
+        return "usuarios/usuariosFormulario";
     }
 
     @PostMapping("/guardarUsuario")//guarda un usuario devuelve un mensaje de error concreto
@@ -63,7 +63,7 @@ public class UsuarioController {
 
     @PostMapping("/editarUsuario")//edita usuario, manda el usuario para rellenar el formulario
     public String usuarioEditar(Usuario u) {
-        return "redirect:/hiberlibros/panelUsuario?mail=" + serviceUsuario.editarUsuario(u);
+        return "redirect:panelUsuario";
     }
 
     @GetMapping("/borrar")
@@ -89,7 +89,7 @@ public class UsuarioController {
         if (borrado != null) {
             m.addAttribute("borrado", borrado);
         }
-        return "/administrador/usuarios";
+        return "administrador/usuarios";
     }
 
     @PostMapping("/altaAdmin")
@@ -118,7 +118,7 @@ public class UsuarioController {
             e.printStackTrace();
         }
 
-        return "redirect:/hiberlibros/panelUsuario";
+        return "redirect:panelUsuario";
     }
 
     @GetMapping("/download")

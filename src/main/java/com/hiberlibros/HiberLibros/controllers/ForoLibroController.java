@@ -34,7 +34,7 @@ public class ForoLibroController {
     @GetMapping("/libro")
     public String recuperarForosPorLibro(Model m, Integer id) {
         m.addAttribute("foros",serviceForoLibro.recuperarForosDeLibro(serviceLibro.libroId(id)));
-        return "/principal/foro";
+        return "principal/foro";
     }
     
     @GetMapping()
@@ -42,7 +42,7 @@ public class ForoLibroController {
         m.addAttribute("foro", new ForoLibro());
         m.addAttribute("libros", serviceLibro.encontrarDisponible());
         m.addAttribute("foros", serviceForoLibro.recuperarTodosLosForos());
-        return "/principal/foro";
+        return "principal/foro";
     }
     
     @GetMapping("/alta")
@@ -54,14 +54,14 @@ public class ForoLibroController {
         m.addAttribute("libros", serviceLibro.encontrarDisponible());
         m.addAttribute("foros", serviceForoLibro.recuperarTodosLosForos());
 
-        return "/principal/foro";
+        return "principal/foro";
     }
     
     
     @GetMapping("/baja")
     public String bajaForo (Integer id){
         serviceForoLibro.bajaForoLibro(id);
-        return "/principal/altaForo";
+        return "principal/altaForo";
     }
     
     

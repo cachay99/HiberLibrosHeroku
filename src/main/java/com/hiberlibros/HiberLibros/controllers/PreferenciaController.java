@@ -53,7 +53,7 @@ public class PreferenciaController {
        
         prefService.addPreferencia(pref);
 
-        return "redirect:/preferencia";
+        return "redirect:preferencia";
     }
 
     @GetMapping("/borrar/{id}")
@@ -62,6 +62,6 @@ public class PreferenciaController {
         
         prefService.borrarPreferencia(id);
 
-        return "redirect:/preferencia";
+        return "redirect:preferencia";
     }
 }

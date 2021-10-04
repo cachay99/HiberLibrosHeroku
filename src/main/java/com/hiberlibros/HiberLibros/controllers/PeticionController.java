@@ -32,7 +32,7 @@ public class PeticionController {
             m.addAttribute("peticion", p);
         }
         m.addAttribute("peticiones",servicePeticion.consultaTodasPeticiones());
-        return "/peticion/peticion";
+        return "peticion/peticion";
     }
     
     @GetMapping(value = "/alta") //Recibe los integer y crea una nueva petición, vuelve al panel de usuario
@@ -46,7 +46,7 @@ public class PeticionController {
     @PostMapping(value = "/baja")
     public String peticionBaja(Model m, Peticion p){
         servicePeticion.eliminaPeticion(p);
-        return "redirect:/peticion/peticion";
+        return "redirect:peticion/peticion";
     }
     @GetMapping("/baja") //retira una solicitud solo con el ID de la petición para no tener que mandar un objeto petición
     public String retirarSolicitud(Integer id){

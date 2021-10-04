@@ -67,7 +67,7 @@ public class LibroController {
         m.addAttribute("editoriales", serviceEdit.consultaTodas());
         m.addAttribute("autores", serviceAutor.consultarAutores());
 
-        return "/libros/modificar";
+        return "modificar";
     }
 
     @GetMapping("/listarAdmin")
@@ -80,7 +80,7 @@ public class LibroController {
             m.addAttribute("borrado",borrado);
         }
 
-        return "/administrador/libros";
+        return "libros";
     }
 
     @PostMapping("/guardarAdmin")
@@ -108,6 +108,6 @@ public class LibroController {
     public String addValoracionLibro(Model m, Integer id, Integer valoracion) {
         libroService.valorarLibro(libroService.libroId(id), valoracion);
 
-        return "redirect:/hiberlibros/buscarLibro";
+        return "redirect:buscarLibro";
     }
 }

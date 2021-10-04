@@ -53,7 +53,7 @@ public class RelatoController {
 
         model.addAttribute("generos", serviceGenero.getGeneros());
         model.addAttribute("relatos", repoRelato.findAll());
-        return "/principal/relato";
+        return "principal/relato";
     }
 
     @GetMapping("/listaRelatos")
@@ -62,7 +62,7 @@ public class RelatoController {
         model.addAttribute("generos", serviceGenero.getGeneros());
         model.addAttribute("relatos", repoRelato.findAll());
         model.addAttribute("usuario", u);
-        return "/principal/buscarRelatos";
+        return "principal/buscarRelatos";
     }
 
     @PostMapping("/guardarRelato")
@@ -82,7 +82,7 @@ public class RelatoController {
             e.printStackTrace();
 
         }
-        return "redirect:/relato";
+        return "redirect:relato";
     }
 
     @GetMapping("/eliminarRelato")

@@ -29,7 +29,7 @@ public class GeneroController {
         model.addAttribute("generos", serviceGen.getGeneros());
         model.addAttribute("generoForm", new Genero());
 
-        return "/generos/genero";
+        return "generos/genero";
     }
 
     @PostMapping("/guardar")
@@ -48,7 +48,7 @@ public class GeneroController {
             borrado = "Error, no es posible borrar este género";
         }
 
-        return "redirect:/genero/listarAdmin?borrado=" + borrado;
+        return "redirect:genero/listarAdmin?borrado=" + borrado;
     }
 
     @GetMapping("/editar")
@@ -66,6 +66,6 @@ public class GeneroController {
         if (borrado != null) {
             m.addAttribute("borrado", borrado);
         }
-        return "/administrador/generos";
+        return "administrador/generos";
     }
 }

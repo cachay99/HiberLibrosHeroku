@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Usuario
  */
 @Controller
-@RequestMapping("hilos")
+@RequestMapping("/hilos")
 public class ComentarioForoController {
     @Autowired
     private IComentarioForoService serviceComentarioForo; 
