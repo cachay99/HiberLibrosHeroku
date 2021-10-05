@@ -109,6 +109,6 @@ public class LibroController {
     public String addValoracionLibro(Model m, Integer id, Integer valoracion) {
         libroService.valorarLibro(libroService.libroId(id), valoracion);
 
-        return "redirect:buscarLibro";
+        return "redirect:/hiberlibros/buscarLibro";
     }
 }

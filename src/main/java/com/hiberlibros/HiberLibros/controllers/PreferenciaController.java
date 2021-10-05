@@ -53,15 +53,15 @@ public class PreferenciaController {
        
         prefService.addPreferencia(pref);
 
-        return "redirect:preferencia";
+        return "redirect:/preferencia";
     }
 
-    @GetMapping("/borrar/{id}")
-    public String borrarPreferencia(@PathVariable Integer id) {
+    @GetMapping("/borrar")
+    public String borrarPreferencia(Integer id) {
         
         
         prefService.borrarPreferencia(id);
 
-        return "redirect:preferencia";
+        return "redirect:/preferencia";
     }
 }

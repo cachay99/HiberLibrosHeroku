@@ -23,17 +23,17 @@ public class EditorialController {
     @Autowired
     private IEditorialService serviceEditorial;
 
-//    @RequestMapping( method = {RequestMethod.POST, RequestMethod.GET})
-//    public String editoriales(Model m, Editorial editorial) {
-//        if (editorial.getId() == null) {
-//            editorial = new Editorial();
-//        } else {
-//            editorial = serviceEditorial.consultaPorIdEditorial(editorial.getId());
-//        }
-//        m.addAttribute("editorial", editorial);
-//        m.addAttribute("editoriales", serviceEditorial.consultaTodas());
-//        return "/editoriales/editoriales";
-//    }
+    @RequestMapping( method = {RequestMethod.POST, RequestMethod.GET})
+    public String editoriales(Model m, Editorial editorial) {
+        if (editorial.getId() == null) {
+            editorial = new Editorial();
+        } else {
+            editorial = serviceEditorial.consultaPorIdEditorial(editorial.getId());
+        }
+        m.addAttribute("editorial", editorial);
+        m.addAttribute("editoriales", serviceEditorial.consultaTodas());
+        return "/editoriales/editoriales";
+    }
 
     @PostMapping("/alta")
     public String editorialesAlta(Model m, Editorial ed) {
