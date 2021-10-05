@@ -212,8 +212,8 @@ public class InicioController {
     
     
     @PostMapping("/guardarRelato")
-    public String formularioRelato(Model m, Integer id, Relato relato, MultipartFile ficherosubido) {
-        serviceRelato.guardarRelato(RUTA_BASE, relato, ficherosubido, id);
+    public String formularioRelato(Model m, Relato relato, MultipartFile ficherosubido) {
+        serviceRelato.guardarRelato(RUTA_BASE, relato, ficherosubido, serviceSeguridad.getMailFromContext());
         return "redirect:panelUsuario";
     }
 

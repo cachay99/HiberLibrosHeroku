@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface IRelatoService {
     
-    public void guardarRelato(String RUTA_BASE, Relato relato, MultipartFile ficherosubido, Integer id);
+    public void guardarRelato(String RUTA_BASE, Relato relato, MultipartFile ficherosubido, String mail);
 
     public List<Relato> buscarRelato(String titulo);
 

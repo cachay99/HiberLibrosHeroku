@@ -58,7 +58,7 @@ public class RelatoService implements IRelatoService {
     }
 
     @Override
-    public void guardarRelato(String RUTA_BASE, Relato relato, MultipartFile ficherosubido, Integer id) {
+    public void guardarRelato(String RUTA_BASE, Relato relato, MultipartFile ficherosubido, String mail) {
        String nombre = UUID.randomUUID().toString();
         String nombreFichero = ficherosubido.getOriginalFilename().toLowerCase();
         String extension = nombreFichero.substring(nombreFichero.lastIndexOf("."));
@@ -71,7 +71,7 @@ public class RelatoService implements IRelatoService {
             relato.setFichero(subir);
             relato.setValoracionUsuarios(new Double(0));
             relato.setNumeroValoraciones(0);
-            relato.setUsuario(serviceUsu.usuarioId(id));
+            relato.setUsuario(serviceUsu.usuarioRegistrado(mail));
             relatoRepository.save(relato);
         } catch (Exception e) {
             e.printStackTrace(); 

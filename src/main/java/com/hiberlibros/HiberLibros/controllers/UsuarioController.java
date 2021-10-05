@@ -119,7 +119,7 @@ public class UsuarioController {
             e.printStackTrace();
         }
 
-        return "redirect:hiberlibros/panelUsuario";
+        return "redirect:/hiberlibros/panelUsuario";
     }
 
     @GetMapping("/download")
