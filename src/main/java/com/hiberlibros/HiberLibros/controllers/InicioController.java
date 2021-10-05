@@ -77,7 +77,7 @@ public class InicioController {
     @Autowired
     private IGeneracionDatos serviceGenerarDatos;
 
-    private final String RUTA_BASE = "c:\\zzzzSubirFicheros\\";
+    private final String RUTA_BASE = "src/main/resources/static/ficheros/";
 
     @GetMapping
     public String inicio(Model m, String error) {

@@ -127,7 +127,7 @@ public class GenerarDatos implements IGeneracionDatos {
         }
         
         if(repoUsuario.findAll().isEmpty()){
-            repoUsuario.save(new Usuario(1, "Pedro", "García", "C/Zaragoza", "Zaragoza", "pedro@correo.com", "666666666", null, null, null, null, Boolean.FALSE));
+            repoUsuario.save(new Usuario(1, "Pedro", "García", "C/Zaragoza", "Zaragoza", "pedro@correo.com", "666666666", null, null, null, "src/main/resources/static/upload/pedro.jpg", Boolean.FALSE));
             repoUsuario.save(new Usuario(2, "María", "Gómez", "C/Zaragoza", "Zaragoza", "maria@correo.com", "666655566", null, null, null, null, Boolean.FALSE));
             repoUsuario.save(new Usuario(3, "Admin", "Admin", "C/Zaragoza", "Zaragoza", "admin@correo.com", "666644446", null, null, null, null, Boolean.FALSE));
         }
@@ -160,7 +160,7 @@ public class GenerarDatos implements IGeneracionDatos {
         }
         
         if(repoRelato.findAll().isEmpty()){
-            
+            repoRelato.save(new Relato(1, "src/main/resources/static/ficheros/Relato.txt",repoUsuario.findById(1).get(), "Relato 1", 0.0, 1, repoGen.findById(1).get()));
         }
         
     }

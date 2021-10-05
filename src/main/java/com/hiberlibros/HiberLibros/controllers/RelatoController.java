@@ -46,7 +46,7 @@ public class RelatoController {
     @Autowired
     private IRelatoService relatoService;
 
-    private final String RUTA_BASE = "c:\\zzzzSubirFicheros\\";
+    private final String RUTA_BASE = "src/main/resources/static/ficheros/";
 
     @GetMapping
     public String prueba(Model model) {
